@@ -3,7 +3,7 @@
 **Conferência de documentação clínica para hospitais de interior.**
 O Tria mostra onde a documentação do hospital vai falhar, antes de o convênio auditar.
 
-[Página do projeto](https://tria-auditoria.vercel.app) · [Vídeo de demonstração](https://tria-auditoria.vercel.app/#video) · [O problema em detalhe](docs/problema.md) · [LinkedIn do fundador](https://www.linkedin.com/in/pedro-gomes-sampaio-42539a409)
+[Página do projeto](https://tria-auditoria.vercel.app) · [Vídeo de demonstração](https://tria-auditoria.vercel.app/#video) · [O problema em detalhe](docs/problema.md) · [Testar o Tria pelo WhatsApp](https://wa.me/5588998659065?text=Ol%C3%A1%2C%20Pedro%21%20Vim%20pela%20p%C3%A1gina%20do%20Tria%20e%20quero%20testar.) · [LinkedIn do fundador](https://www.linkedin.com/in/pedro-gomes-sampaio-42539a409)
 
 > Este repositório é a apresentação pública do Tria. O código do produto é privado.
 
