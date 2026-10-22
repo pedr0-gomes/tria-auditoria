@@ -149,6 +149,8 @@
   .bloco.escuro{background:var(--navy);border-color:var(--navy);color:var(--white)}
   .bloco.escuro h3{color:var(--turq)}
   .bloco ul,.bloco ol{padding-left:20px;display:grid;gap:8px}
+  .duas.uma{grid-template-columns:1fr}
+  @media (min-width:700px){.duas.uma .bloco ul{grid-template-columns:1fr 1fr;column-gap:32px}}
   .frentes-tit{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted-2);margin-top:48px}
   .frentes{list-style:none;padding:0;margin-top:20px;display:grid;gap:0}
   .frente{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:center;position:relative;padding:10px 0}
@@ -409,7 +411,7 @@
   <div class="wrap">
     <p class="eyebrow">Onde estamos</p>
     <h2>Pronto para testar, buscando as primeiras instituições</h2>
-    <div class="duas">
+    <div class="duas uma">
       <div class="bloco">
         <h3>Hoje</h3>
         <ul>
@@ -418,14 +420,6 @@
           <li>Pronto para testar na sua instituição</li>
           <li>Testado até agora em casos sintéticos</li>
         </ul>
-      </div>
-      <div class="bloco escuro">
-        <h3>Próximos 90 dias</h3>
-        <ol>
-          <li>Testes reais com gestores e auditoria</li>
-          <li>Validação técnica por um profissional auditor</li>
-          <li>Primeiras instituições em uso real</li>
-        </ol>
       </div>
     </div>
     <p class="frentes-tit">O que o Tria vai conferir</p>

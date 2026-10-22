@@ -67,11 +67,7 @@ A administração de medicamentos é a primeira frente: cruza prescrição, anot
 
 O Tria está pronto para testar e busca as primeiras instituições. O app está no ar, acessado por link, e lê os documentos por foto. Até agora foi testado só em casos sintéticos.
 
-Próximos 90 dias:
-
-1. Testes reais com gestores e auditoria.
-2. Validação técnica por um profissional auditor.
-3. Primeiras instituições em uso real.
+O que vem a seguir está na tabela acima: materiais cirúrgicos, exames e laudos, conta × prontuário e painel de gestão.
 
 ## Quem faz
 
