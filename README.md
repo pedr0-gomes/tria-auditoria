@@ -14,7 +14,7 @@ O Tria confere os documentos do hospital e mostra onde eles não batem, antes de
 
 Glosa é quando o convênio nega ou retém o pagamento de uma conta hospitalar. Em 2024, a glosa média inicial nos hospitais privados associados à Anahp chegou a 15,89%, com mais de R$ 5,8 bilhões em serviços prestados e não pagos. Mesmo quando a glosa cai no recurso, o dinheiro fica parado de 4 a 24 meses.
 
-Muitas glosas não questionam o cuidado, e sim o registro: o que foi prescrito, o que foi feito e o que foi anotado precisam contar a mesma história. Em dois hospitais privados estudados, a glosa administrativa respondeu por 68,7% e 78,2% do valor glosado. Conferir esses documentos à mão não dá conta de tudo: as glosas grandes são vistas, os erros pequenos passam.
+Muitas glosas não questionam o cuidado, e sim o registro: o que foi prescrito, o que foi feito e o que foi anotado precisam contar a mesma história. Num estudo de 424 prontuários de um hospital universitário (dados de 2006–07), a anotação de enfermagem estava presente em 99,5% deles, mas completa em apenas 2,4%. Conferir esses documentos à mão não dá conta de tudo: as glosas grandes são vistas, os erros pequenos passam.
 
 → [Leia o problema em detalhe, com as fontes](docs/problema.md)
 

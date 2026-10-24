@@ -15,9 +15,9 @@ A glosa administrativa não discute se o paciente recebeu o cuidado. Discute se 
 
 - Em 2024, a glosa média nos hospitais privados associados à Anahp foi de **15,89%**, contra 11,89% em 2023. A pesquisa da entidade aponta **mais de R$ 5,8 bilhões** em serviços prestados e não pagos naquele ano.
 - A maior parte dessa glosa inicial cai no recurso. Mas, enquanto a discussão dura, **de 4 a 24 meses**, a receita do hospital não se realiza. E alguém da equipe precisa refazer o trabalho para recorrer.
-- Em dois hospitais privados estudados, a glosa administrativa superou a técnica: respondeu por **68,7% e 78,2% do valor glosado**.
+- Num estudo de 424 prontuários de um hospital universitário (dados de 2006–07), a anotação de enfermagem estava presente em **99,5%** dos prontuários, mas completa em apenas **2,4%**; a checagem da prescrição médica, presente em 98,1%, estava completa em 1,7% (Setz e D'Innocenzo, 2009). É um hospital e dados de quase 20 anos; mede o registro, não a glosa.
 
-Esses números vêm de hospitais privados de grande porte e de dois hospitais estudados em 2018. Não sabemos ainda quanto eles valem para o hospital de interior, e medir isso faz parte do que o Tria quer aprender.
+Esses números vêm de hospitais privados de grande porte e de um hospital universitário estudado em 2006–07. Não sabemos ainda quanto eles valem para o hospital de interior, e medir isso faz parte do que o Tria quer aprender.
 
 ## Onde a glosa nasce
 
@@ -58,4 +58,4 @@ Conferir os três documentos a partir de fotos do celular, mostrar ao auditor on
 ## Fontes
 
 - Anahp. [*Balanço Observatório Anahp: panorama trimestral financeiro e operacional da saúde suplementar*](https://anahp.com.br/wp-content/uploads/2025/04/Balanco_Observatorio_Anahp_Marco25.pdf), 5ª edição, abril de 2025.
-- Truzzi IGC, Jericó MC, Lima AFC, Zunta RSB, Oliveira DS, Romcy HM. Glosa hospitalar: indicador e análise por meio da troca de informações de saúde suplementar. *Enfermagem Brasil*, v. 21, n. 2, 2022. [doi:10.33233/eb.v21i2.4988](https://doi.org/10.33233/eb.v21i2.4988)
+- Setz VG, D'Innocenzo M. Evaluation of the quality of nursing documentation though the review of patient medical records. *Acta Paulista de Enfermagem*, v. 22, n. 3, 2009. [SciELO](https://scielo.br/j/ape/a/BsjcfBf4mRWgD7ZRYGfBJ4F/?lang=en)
