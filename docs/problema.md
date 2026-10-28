@@ -4,7 +4,7 @@
 
 ## O que é glosa
 
-Glosa é a recusa, total ou parcial, do pagamento de uma conta hospitalar pelo convênio. Ela pode ser de dois tipos:
+Glosa é a recusa, total ou parcial, do pagamento de uma conta hospitalar pelo plano de saúde. Ela pode ser de dois tipos:
 
 - **Técnica:** questiona o procedimento ou o cuidado prestado.
 - **Administrativa:** aponta falha de documentação ou de processo, como falta de registro, documentos que não conferem entre si ou item cobrado sem o lastro exigido.
@@ -13,8 +13,8 @@ A glosa administrativa não discute se o paciente recebeu o cuidado. Discute se 
 
 ## O tamanho do problema
 
-- Em 2024, a glosa média nos hospitais privados associados à Anahp foi de **15,89%**, contra 11,89% em 2023. A pesquisa da entidade aponta **mais de R$ 5,8 bilhões** em serviços prestados e não pagos naquele ano.
-- A maior parte dessa glosa inicial cai no recurso. Mas, enquanto a discussão dura, **de 4 a 24 meses**, a receita do hospital não se realiza. E alguém da equipe precisa refazer o trabalho para recorrer.
+- Em 2025, a glosa inicial média nos hospitais associados à Anahp foi de **15,93%** do faturamento; depois da negociação, só **1,72%** se sustenta (Balanço Observatório, 9ª edição, março de 2026). Não comparamos com anos anteriores: a base de hospitais da pesquisa cresceu de 120 para 194, e a comparação mistura amostras.
+- A maior parte dessa glosa inicial cai no recurso, mas o dinheiro demora: em 2025 os hospitais levaram em média **77 dias** para receber das operadoras e pagaram os fornecedores em **48 dias**, **29 dias a mais** para receber do que para pagar (a diferença é conta nossa a partir dos dois prazos; 77 dias é o prazo geral de recebimento, não o tempo de recuperar uma glosa). E alguém da equipe precisa refazer o trabalho para recorrer.
 - Num estudo de 424 prontuários de um hospital universitário (dados de 2006–07), a anotação de enfermagem estava presente em **99,5%** dos prontuários, mas completa em apenas **2,4%**; a checagem da prescrição médica, presente em 98,1%, estava completa em 1,7% (Setz e D'Innocenzo, 2009). É um hospital e dados de quase 20 anos; mede o registro, não a glosa.
 
 Esses números vêm de hospitais privados de grande porte e de um hospital universitário estudado em 2006–07. Não sabemos ainda quanto eles valem para o hospital de interior, e medir isso faz parte do que o Tria quer aprender.
@@ -37,7 +37,7 @@ Quando os três não contam a mesma história, a conta fica exposta. Por exemplo
 
 ## Quando a glosa aparece
 
-Tarde. A incoerência nasce no registro, em papel, durante a internação. Ela só aparece na conta, quando o convênio audita.
+Tarde. A incoerência nasce no registro, em papel, durante a internação. Ela só aparece na conta, quando o plano de saúde audita.
 
 No hospital que acompanhamos em campo, a auditoria interna revisa os prontuários de forma manual na janela entre o aviso da operadora e a visita. É trabalho contra o relógio: as glosas grandes são vistas, os erros pequenos passam. E papel errado ou rasurado vira glosa mesmo quando o registro digital está certo.
 
@@ -47,7 +47,7 @@ O hospital de interior costuma trabalhar no papel e sem equipe de TI. As ferrame
 
 ## O que o Tria propõe
 
-Conferir os três documentos a partir de fotos do celular, mostrar ao auditor onde eles não batem e deixar a decisão com ele, antes de o convênio auditar. Hoje o Tria confere medicação, que é por onde começamos.
+Conferir os três documentos a partir de fotos do celular, mostrar ao auditor onde eles não batem e deixar a decisão com ele, antes de o plano de saúde conferir. Hoje o Tria confere medicação, que é por onde começamos.
 
 ## O que ainda queremos aprender
 
@@ -57,5 +57,5 @@ Conferir os três documentos a partir de fotos do celular, mostrar ao auditor on
 
 ## Fontes
 
-- Anahp. [*Balanço Observatório Anahp: panorama trimestral financeiro e operacional da saúde suplementar*](https://anahp.com.br/wp-content/uploads/2025/04/Balanco_Observatorio_Anahp_Marco25.pdf), 5ª edição, abril de 2025.
+- Anahp. [*Balanço Observatório Anahp: panorama trimestral financeiro e operacional da saúde suplementar*](https://anahp.com.br/wp-content/uploads/2026/04/Balanco-Observatorio-9.pdf), 9ª edição, março de 2026.
 - Setz VG, D'Innocenzo M. Evaluation of the quality of nursing documentation though the review of patient medical records. *Acta Paulista de Enfermagem*, v. 22, n. 3, 2009. [SciELO](https://scielo.br/j/ape/a/BsjcfBf4mRWgD7ZRYGfBJ4F/?lang=en)
