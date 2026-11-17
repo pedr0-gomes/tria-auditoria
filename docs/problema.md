@@ -4,7 +4,7 @@
 
 ## O que é glosa
 
-Glosa é a recusa, total ou parcial, do pagamento de uma conta hospitalar pelo plano de saúde. Ela pode ser de dois tipos:
+Glosa é a recusa, total ou parcial, do pagamento de uma conta de hospital ou clínica pelo plano de saúde. Ela pode ser de dois tipos:
 
 - **Técnica:** questiona o procedimento ou o cuidado prestado.
 - **Administrativa:** aponta falha de documentação ou de processo, como falta de registro, documentos que não conferem entre si ou item cobrado sem o lastro exigido.
@@ -17,7 +17,7 @@ A glosa administrativa não discute se o paciente recebeu o cuidado. Discute se 
 - A maior parte dessa glosa inicial cai no recurso, mas o dinheiro demora: em 2025 os hospitais levaram em média **77 dias** para receber das operadoras e pagaram os fornecedores em **48 dias**, **29 dias a mais** para receber do que para pagar (a diferença é conta nossa a partir dos dois prazos; 77 dias é o prazo geral de recebimento, não o tempo de recuperar uma glosa). E alguém da equipe precisa refazer o trabalho para recorrer.
 - Num estudo de 424 prontuários de um hospital universitário (dados de 2006–07), a anotação de enfermagem estava presente em **99,5%** dos prontuários, mas completa em apenas **2,4%**; a checagem da prescrição médica, presente em 98,1%, estava completa em 1,7% (Setz e D'Innocenzo, 2009). É um hospital e dados de quase 20 anos; mede o registro, não a glosa.
 
-Esses números vêm de hospitais privados de grande porte e de um hospital universitário estudado em 2006–07. Não sabemos ainda quanto eles valem para o hospital de interior, e medir isso faz parte do que o Tria quer aprender.
+Esses números vêm de hospitais privados de grande porte e de um hospital universitário estudado em 2006–07. Não sabemos ainda quanto eles valem para hospitais e clínicas menores, e medir isso faz parte do que o Tria quer aprender.
 
 ## Onde a glosa nasce
 
@@ -41,13 +41,13 @@ Tarde. A incoerência nasce no registro, em papel, durante a internação. Ela s
 
 No hospital que acompanhamos em campo, a auditoria interna revisa os prontuários de forma manual na janela entre o aviso da operadora e a visita. É trabalho contra o relógio: as glosas grandes são vistas, os erros pequenos passam. E papel errado ou rasurado vira glosa mesmo quando o registro digital está certo.
 
-## Por que o hospital de interior
+## Por que onde papel e sistema convivem
 
-O hospital de interior costuma trabalhar no papel e sem equipe de TI. As ferramentas de auditoria que mapeamos exigem sistema instalado, como prontuário eletrônico ou sistema de gestão. Quem trabalha no papel fica com a conferência manual.
+Segundo a TIC Saúde 2025, 92% dos estabelecimentos de saúde já usam algum sistema eletrônico, mas 55% ainda misturam papel e eletrônico, e só 27% têm sistemas que trocam informação entre si ([Cetic.br](https://www.cetic.br/media/docs/publicacoes/2/pt-br/20260512115440/TIC_SAUDE_2025_PT_resumoexecutivo.pdf)). As ferramentas de auditoria que mapeamos exigem sistema instalado e integrado. Quem trabalha com documento solto, em papel ou em sistemas que não se falam, fica com a conferência manual.
 
 ## O que o Tria propõe
 
-Conferir os três documentos a partir de fotos do celular, mostrar ao auditor onde eles não batem e deixar a decisão com ele, antes de o plano de saúde conferir. Hoje o Tria confere medicação, que é por onde começamos.
+Conferir os documentos do atendimento a partir de fotos do celular, mostrar a quem audita onde eles não batem e deixar a decisão com essa pessoa, antes de o plano de saúde conferir. Hoje o Tria confere a administração de medicamentos (prescrição, anotação de enfermagem e evolução), que é por onde começamos.
 
 ## O que ainda queremos aprender
 

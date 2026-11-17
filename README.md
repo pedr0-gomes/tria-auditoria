@@ -2,7 +2,7 @@
 
 **Confira antes. Receba pelo que fez.**
 
-Fotografe a prescrição, a anotação de enfermagem e a evolução com o celular, e o Tria mostra onde os registros não batem, antes de o plano de saúde conferir. Assim a instituição recebe pelo cuidado que já prestou.
+Fotografe os documentos do atendimento com o celular, e o Tria mostra onde eles não batem entre si, antes de o plano de saúde conferir. Assim a instituição recebe pelo cuidado que já prestou.
 
 [Página do projeto](https://tria-auditoria.vercel.app) · [Vídeo de demonstração](https://tria-auditoria.vercel.app/#video) · [O problema em detalhe](docs/problema.md) · [Testar o Tria pelo WhatsApp](https://wa.me/5588998659065?text=Ol%C3%A1%2C%20Pedro%21%20Vim%20pela%20p%C3%A1gina%20do%20Tria%20e%20quero%20testar.) · [LinkedIn do fundador](https://www.linkedin.com/in/pedro-gomes-sampaio-42539a409)
 
@@ -12,7 +12,7 @@ Fotografe a prescrição, a anotação de enfermagem e a evolução com o celula
 
 ## O problema
 
-Glosa é quando o plano de saúde nega ou retém o pagamento de uma conta hospitalar. Em 2025, a glosa média inicial nos hospitais associados à Anahp foi de 15,93% do faturamento; depois da negociação, só 1,72% se sustenta. E o dinheiro demora: em média 77 dias para receber das operadoras contra 48 para pagar os fornecedores, 29 dias a mais.
+Glosa é quando o plano de saúde nega ou retém o pagamento de uma conta de hospital ou clínica. Em 2025, a glosa média inicial nos hospitais associados à Anahp foi de 15,93% do faturamento; depois da negociação, só 1,72% se sustenta. E o dinheiro demora: em média 77 dias para receber das operadoras contra 48 para pagar os fornecedores, 29 dias a mais.
 
 Algumas glosas não questionam o cuidado, e sim o registro: o que foi prescrito, o que foi feito e o que foi anotado precisam contar a mesma história. Num estudo de 424 prontuários de um hospital universitário (dados de 2006–07), a anotação de enfermagem estava presente em 99,5% deles, mas completa em apenas 2,4%. Conferir esses documentos à mão não dá conta de tudo: as glosas grandes são vistas, os erros pequenos passam.
 
@@ -32,15 +32,15 @@ Ao lado, o relatório real do app em um caso sintético, sem nenhum dado de paci
 
 - **Precisão.** A IA só lê; as regras decidem. Cada achado traz a razão, e a decisão final é sempre do auditor.
 - **Qualquer documento.** Aceita o documento como ele já existe (foto, PDF, planilha ou papel escaneado). Hoje o app lê por foto e confere medicamentos; as demais frentes entram conforme a necessidade.
-- **Sem integração.** Funciona com o que o hospital já tem. Não depende de prontuário eletrônico nem de equipe de TI.
-- **Resultado medido.** A sua auditoria confirma cada achado. O valor do Tria é medido no seu hospital, não prometido.
+- **Sem integração.** Funciona com o que a instituição já tem. Não depende de prontuário eletrônico nem de equipe de TI.
+- **Resultado medido.** A sua auditoria confirma cada achado. O valor do Tria é medido na sua instituição, não prometido.
 
 ## Como começar
 
 Você testa de graça, vê o resultado e decide.
 
-1. **Testa.** Uso gratuito por 30 dias, com limite de uso. Você recebe um link e começa com documentos do seu hospital, sem identificação do paciente.
-2. **Mede.** A sua auditoria confere e confirma os achados. Você vê, no seu próprio hospital, o que o Tria encontra.
+1. **Testa.** Uso gratuito por 30 dias, com limite de uso. Você recebe um link e começa com documentos da sua instituição, sem identificação do paciente.
+2. **Mede.** A sua auditoria confere e confirma os achados. Você vê, na sua própria instituição, o que o Tria encontra.
 3. **Assina.** Se o resultado valer, a assinatura é por instituição, em faixas de porte. Sem prazo fixo para decidir.
 
 ## O que o Tria confere
@@ -75,4 +75,4 @@ O que vem a seguir está na tabela acima: materiais cirúrgicos, exames e laudos
 
 ## Quer testar?
 
-O uso é gratuito e limitado para instituições que atendem planos de saúde. Se você trabalha com auditoria, faturamento ou gestão hospitalar, [fale comigo pelo WhatsApp](https://tria-auditoria.vercel.app/#contato) e eu envio o seu link de acesso.
+O uso é gratuito e limitado para instituições que atendem planos de saúde. Se você trabalha com auditoria, faturamento ou gestão em hospitais e clínicas, [fale comigo pelo WhatsApp](https://tria-auditoria.vercel.app/#contato) e eu envio o seu link de acesso.
