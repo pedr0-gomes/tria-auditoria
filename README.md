@@ -4,7 +4,7 @@
 
 Fotografe os documentos do atendimento com o celular, e o Tria mostra onde eles não batem entre si, antes de o plano de saúde conferir. Assim a instituição recebe pelo cuidado que já prestou.
 
-[Página do projeto](https://tria-auditoria.vercel.app) · [Vídeo de demonstração](https://tria-auditoria.vercel.app/#video) · [O problema em detalhe](docs/problema.md) · [Testar o Tria pelo WhatsApp](https://wa.me/5588998659065?text=Ol%C3%A1%2C%20Pedro%21%20Vim%20pela%20p%C3%A1gina%20do%20Tria%20e%20quero%20testar.) · [LinkedIn do fundador](https://www.linkedin.com/in/pedro-gomes-sampaio-42539a409)
+[Página do projeto](https://tria-auditoria.vercel.app) · [Blog](https://tria-auditoria.vercel.app/blog/) · [Vídeo de demonstração](https://tria-auditoria.vercel.app/#video) · [O problema em detalhe](docs/problema.md) · [Testar o Tria pelo WhatsApp](https://wa.me/5588998659065?text=Ol%C3%A1%2C%20Pedro%21%20Vim%20pela%20p%C3%A1gina%20do%20Tria%20e%20quero%20testar.) · [LinkedIn do fundador](https://www.linkedin.com/in/pedro-gomes-sampaio-42539a409)
 
 > Este repositório é a apresentação pública do Tria. O código do produto é privado.
 
