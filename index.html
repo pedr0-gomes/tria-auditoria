@@ -64,6 +64,7 @@
   /* topo */
   .hero{background:var(--navy);color:var(--white)}
   .top{display:flex;align-items:center;justify-content:space-between;padding:20px 0}
+  .top-links{display:flex;gap:22px;align-items:center}
   .top-cta{font-size:15px;font-weight:700;color:var(--turq);text-decoration:none;padding:8px 0}
   .hero-body{padding:40px 0 72px}
   .hero h1{font-size:clamp(46px,8.4vw,92px);max-width:16ch}
@@ -175,6 +176,16 @@
   .lista li:first-child{border-top:none}
   .lista svg{width:22px;height:22px;margin-top:3px;color:var(--teal)}
 
+  /* blog */
+  .posts{list-style:none;padding:0;margin-top:32px;display:grid;gap:16px}
+  .posts a{display:grid;grid-template-columns:96px 1fr;gap:20px;align-items:start;border:1px solid var(--line);border-radius:16px;padding:20px;text-decoration:none;background:var(--white)}
+  .posts a:hover{border-color:var(--teal)}
+  .posts img{width:96px;aspect-ratio:4/5;object-fit:cover;object-position:top;border:1px solid var(--line);border-radius:10px}
+  .posts strong{display:block;font-family:var(--display);font-size:26px;line-height:1.1}
+  .posts span{display:block;color:var(--muted);margin-top:8px}
+  .posts time{display:block;font-size:14px;color:var(--muted-2);margin-top:10px}
+  @media (min-width:600px){.posts a{grid-template-columns:140px 1fr;gap:28px}.posts img{width:140px}}
+
   /* contato */
   .contato{background:var(--navy-2);color:var(--white);text-align:center}
   .contato .eyebrow{color:var(--turq)}
@@ -216,7 +227,10 @@
   <div class="wrap">
     <nav class="top" aria-label="Topo">
       <a class="marca" href="#" aria-label="Tria, início"><b>T</b>ria</a>
-      <a class="top-cta" href="https://wa.me/5588998659065?text=Ol%C3%A1%2C%20Pedro%21%20Vim%20pela%20p%C3%A1gina%20do%20Tria%20e%20quero%20testar." target="_blank" rel="noopener">Quero testar</a>
+      <div class="top-links">
+        <a class="top-cta" href="/blog/">Blog</a>
+        <a class="top-cta" href="https://wa.me/5588998659065?text=Ol%C3%A1%2C%20Pedro%21%20Vim%20pela%20p%C3%A1gina%20do%20Tria%20e%20quero%20testar." target="_blank" rel="noopener">Quero testar</a>
+      </div>
     </nav>
     <div class="hero-body">
       <h1><span class="tq">Confira antes.</span><br>Receba pelo que fez.</h1>
@@ -479,6 +493,23 @@
   </div>
 </section>
 
+<section id="blog">
+  <div class="wrap">
+    <p class="eyebrow">Blog</p>
+    <h2>O que a pesquisa mostra sobre glosa e conferência</h2>
+    <p class="lead">Artigos curtos, com as fontes e com o que cada estudo não mostra.</p>
+    <ul class="posts">
+      <li><a href="/blog/a-conferencia-acha-o-que-ficou-fora-da-conta/">
+        <img src="/assets/blog/conferencia-dois-sentidos.jpg" width="928" height="1152" alt="" loading="lazy">
+        <div><strong>A conferência da conta também acha o que foi feito e ficou de fora</strong>
+        <span>Num estudo de 2.613 contas, quase todas precisaram de ajuste, e o ajuste foi para os dois lados.</span>
+        <time datetime="2026-11-18">18 de novembro de 2026</time></div>
+      </a></li>
+    </ul>
+    <a class="mais" href="/blog/">Ver todos os artigos →</a>
+  </div>
+</section>
+
 <section id="contato" class="contato">
   <div class="wrap">
     <p class="eyebrow">Teste o Tria</p>
@@ -498,6 +529,7 @@
   <div class="wrap">
     <p><span class="marca" style="font-size:22px"><b>T</b>ria</span> · Confira antes. Receba pelo que fez.</p>
     <nav aria-label="Links">
+      <a href="/blog/">Blog</a>
       <a href="https://www.linkedin.com/in/pedro-gomes-sampaio-42539a409" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://github.com/pedr0-gomes/tria-auditoria" target="_blank" rel="noopener">GitHub</a>
     </nav>
