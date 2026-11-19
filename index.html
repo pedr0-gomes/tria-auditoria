@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tria — Confira antes. Receba pelo que fez.</title>
-<meta name="description" content="Fotografe os documentos do atendimento com o celular e o Tria mostra onde eles não batem, antes de o plano de saúde conferir. Sem integração com sistema: começa com um link.">
+<meta name="description" content="O Tria confere os documentos do atendimento uns contra os outros e mostra onde eles não batem, antes de o plano de saúde conferir. Sem integração com sistema: começa com um link.">
 <meta name="theme-color" content="#12263A">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
@@ -21,12 +21,13 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Saira+Condensed:wght@600;700&display=swap">
 <style>
   :root{
-    --navy:#12263A; --navy-2:#0D1C2B; --navy-3:#1B3550; --white:#FFFFFF; --soft:#F3F6F8; --sand:#E3E9ED;
+    --navy:#12263A; --navy-2:#0D1C2B; --white:#FFFFFF; --soft:#F3F6F8;
     --line:#D9E1E7; --ink:#14202E; --muted:#4A5568; --muted-2:#6A7179;
     --teal:#17727A; --turq:#2BB3AE; --mist:#C5D3DC;
     --display:'Saira Condensed','Arial Narrow',system-ui,sans-serif;
   }
   *{box-sizing:border-box}
+  [hidden]{display:none!important}
   html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
   body{margin:0;background:var(--white);color:var(--ink);
     font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
@@ -43,21 +44,18 @@
   .lead{font-size:clamp(18px,2.1vw,20px);color:var(--muted);max-width:62ch;margin-top:16px}
   .fonte{font-size:14px;color:var(--muted-2);margin-top:12px}
   .fonte a{color:var(--muted)}
-  .nota{font-size:15px;color:var(--muted-2);margin-top:14px}
   .tq{color:var(--turq)}
-  .tl{color:var(--teal)}
 
   .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;
     padding:14px 22px;border-radius:12px;font-weight:700;font-size:17px;text-decoration:none;
     transition:background .15s ease,border-color .15s ease}
-  .btn:focus-visible,.top-cta:focus-visible,.marca:focus-visible{outline:3px solid var(--turq);outline-offset:3px}
+  .btn:focus-visible,.top-cta:focus-visible,.marca:focus-visible,.area:focus-visible{outline:3px solid var(--turq);outline-offset:3px}
   .btn svg{width:20px;height:20px;flex:none}
   .btn-main{background:var(--turq);color:var(--navy)}
   .btn-main:hover{background:#4CC4BF}
   .btn-ghost{border:1.5px solid rgba(255,255,255,.4);color:var(--white)}
   .btn-ghost:hover{border-color:var(--white)}
 
-  /* marca */
   .marca{font-family:var(--display);font-size:32px;font-weight:700;letter-spacing:-.01em;text-decoration:none;line-height:1}
   .marca b{color:var(--turq);font-weight:700}
 
@@ -66,11 +64,14 @@
   .top{display:flex;align-items:center;justify-content:space-between;padding:20px 0}
   .top-links{display:flex;gap:22px;align-items:center}
   .top-cta{font-size:15px;font-weight:700;color:var(--turq);text-decoration:none;padding:8px 0}
-  .hero-body{padding:40px 0 72px}
-  .hero h1{font-size:clamp(46px,8.4vw,92px);max-width:16ch}
-  .hero-sub{font-size:clamp(18px,2.1vw,21px);color:var(--mist);max-width:56ch;margin-top:24px}
+  .hero-body{padding:32px 0 64px;display:grid;gap:40px;align-items:center}
+  .hero h1{font-size:clamp(46px,8vw,88px);max-width:16ch}
+  .hero-sub{font-size:clamp(18px,2.1vw,21px);color:var(--mist);max-width:52ch;margin-top:24px}
   .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
   .hero-note{font-size:15px;color:var(--mist);margin-top:18px}
+  .video-box{width:100%;max-width:340px;margin:0 auto;aspect-ratio:9/16;border-radius:20px;overflow:hidden;
+    background:var(--navy-2);box-shadow:0 24px 48px -24px rgba(0,0,0,.6)}
+  .video-box video{width:100%;height:100%;display:block;object-fit:cover}
 
   /* problema */
   .stats{display:grid;gap:16px;margin-top:32px}
@@ -81,7 +82,7 @@
   .mais{display:inline-block;margin-top:16px;font-weight:700;color:var(--teal);text-decoration:none}
   .mais:hover{text-decoration:underline}
 
-  /* solução */
+  /* como funciona */
   .faixa{background:var(--soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
   .fluxo{display:grid;gap:16px;margin-top:36px;list-style:none;padding:0}
   .etapa{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:26px 24px}
@@ -99,77 +100,18 @@
   .saidas svg{width:24px;height:24px;color:var(--turq);margin-top:2px}
   .saidas b{display:block;color:var(--white)}
   .saidas small{font-size:14px;color:var(--mist)}
-  .selo{display:inline-block;white-space:nowrap;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
-    padding:2px 8px;border-radius:999px;margin-left:6px;vertical-align:2px}
-  .selo.ar{background:var(--turq);color:var(--navy)}
-  .selo.breve{border:1px solid rgba(197,211,220,.5);color:var(--mist)}
-  .fluxo-fim{font-family:var(--display);font-size:26px;font-weight:700;margin-top:24px}
+  .areas-tit{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted-2);margin-top:48px}
+  .areas{list-style:none;padding:0;margin-top:16px;display:grid;gap:12px;grid-template-columns:1fr 1fr}
+  .area{display:block;height:100%;border:1px solid var(--line);border-radius:14px;padding:16px 18px;background:var(--white);font-weight:700;text-decoration:none}
+  .area small{display:block;font-weight:400;font-size:14px;color:var(--muted-2);margin-top:4px}
+  a.area{background:var(--turq);border-color:var(--turq);color:var(--navy)}
+  a.area small{color:var(--navy)}
+  a.area:hover{background:#4CC4BF}
 
-  /* vídeo */
+  /* exemplo */
   .video-grid{display:grid;gap:28px;align-items:center}
-  .video-box{width:100%;max-width:380px;margin:0 auto;aspect-ratio:9/16;border-radius:20px;overflow:hidden;
-    background:var(--navy);box-shadow:0 24px 48px -28px rgba(18,38,58,.6)}
-  .video-box video{width:100%;height:100%;display:block;object-fit:cover}
 
-  /* concorrentes */
-  .comp{display:grid;gap:16px;margin-top:32px}
-  .col{border:1px solid var(--line);border-radius:18px;padding:24px;background:var(--white)}
-  .col h3{font-family:var(--display);font-size:28px;line-height:1.1}
-  .col .quem{font-size:14px;color:var(--muted-2);margin-top:4px}
-  .col dl{margin:18px 0 0;display:grid;gap:14px}
-  .col dt{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted-2)}
-  .col dd{margin:2px 0 0;font-weight:500}
-  .col.tria{background:var(--navy);border-color:var(--navy);color:var(--white)}
-  .col.tria h3{color:var(--turq);font-size:34px}
-  .col.tria .quem,.col.tria dt{color:var(--mist)}
-  .col.tria dd{font-weight:700;color:var(--white)}
-
-  /* proposta */
-  .escura{background:var(--navy);color:var(--white)}
-  .escura .eyebrow{color:var(--turq)}
-  .escura .lead{color:var(--mist)}
-  .pilares{display:grid;gap:16px;margin-top:36px}
-  .pilar{border:1px solid rgba(197,211,220,.22);border-radius:16px;padding:24px}
-  .pilar svg{width:40px;height:40px;color:var(--turq)}
-  .pilar h3{font-family:var(--display);font-size:26px;letter-spacing:.02em;text-transform:uppercase;margin-top:14px}
-  .pilar p{color:var(--mist);margin-top:6px}
-
-  /* como começar */
-  .passos{display:grid;gap:16px;margin-top:32px;list-style:none;padding:0}
-  .passo{border:1px solid var(--line);border-radius:18px;padding:26px 24px;background:var(--white)}
-  .passo .rot{font-family:var(--display);font-size:44px;font-weight:700;line-height:1;margin:14px 0 10px}
-  .passo p{color:var(--muted)}
-  .passo.escuro{background:var(--navy);border-color:var(--navy);color:var(--white)}
-  .passo.escuro p{color:var(--mist)}
-  .passo.escuro .num{background:var(--turq);color:var(--navy)}
-
-  /* estágio */
-  .duas{display:grid;gap:16px;margin-top:32px}
-  .bloco{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:24px}
-  .bloco h3{font-family:var(--display);font-size:28px;color:var(--teal);margin-bottom:12px}
-  .bloco.escuro{background:var(--navy);border-color:var(--navy);color:var(--white)}
-  .bloco.escuro h3{color:var(--turq)}
-  .bloco ul,.bloco ol{padding-left:20px;display:grid;gap:8px}
-  .duas.uma{grid-template-columns:1fr}
-  @media (min-width:700px){.duas.uma .bloco ul{grid-template-columns:1fr 1fr;column-gap:32px}}
-  .frentes-tit{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted-2);margin-top:48px}
-  .frentes{list-style:none;padding:0;margin-top:20px;display:grid;gap:0}
-  .frente{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:center;position:relative;padding:10px 0}
-  .frente::before{content:"";position:absolute;left:21px;top:0;bottom:0;border-left:3px dotted var(--mist)}
-  .frente:first-child::before{top:50%}
-  .frente:last-child::before{bottom:50%}
-  .marco{position:relative;z-index:1;width:44px;height:44px;border-radius:50%;background:var(--white);
-    border:3px dashed var(--mist);display:grid;place-items:center}
-  .frente.ar .marco{border:0;border-radius:12px;background:var(--teal)}
-  .frente.prox .marco{border:0;background:var(--navy)}
-  .frente.prox .marco::after{content:"";width:12px;height:12px;border-radius:50%;background:var(--turq)}
-  .frente.voce .marco{border:0;background:var(--turq)}
-  .marco svg{width:22px;height:22px}
-  .frente b{font-size:18px}
-  .frente div span{display:block;font-size:14px;color:var(--muted-2)}
-  .frente.depois b{color:var(--muted)}
-
-  /* privacidade */
+  /* confiança */
   .caixa{background:var(--soft);border:1px solid var(--line);border-radius:16px;padding:8px 24px;margin-top:32px}
   .lista{list-style:none;padding:0}
   .lista li{display:grid;grid-template-columns:28px 1fr;gap:12px;padding:16px 0;border-top:1px solid var(--line)}
@@ -191,7 +133,8 @@
   .contato .eyebrow{color:var(--turq)}
   .contato h2{margin:0 auto;font-size:clamp(40px,6.4vw,68px);max-width:16ch}
   .contato .lead{color:var(--mist);margin:18px auto 0}
-  .contato .btn{margin-top:32px}
+  .contato .ctas{justify-content:center}
+  .comunidade{font-size:16px;color:var(--mist);max-width:56ch;margin:28px auto 0}
   .assina{font-size:15px;color:var(--mist);margin-top:20px}
 
   footer{background:var(--navy-2);color:var(--mist);font-size:14px;border-top:1px solid rgba(197,211,220,.15)}
@@ -202,21 +145,12 @@
   @media (min-width:760px){
     body{font-size:18px}
     section{padding:96px 0}
-    .hero-body{padding:64px 0 112px}
-    .stats{grid-template-columns:repeat(3,1fr)}
+    .hero-body{grid-template-columns:1fr 340px;gap:56px;padding:48px 0 96px}
+    .stats{grid-template-columns:1fr 1fr}
     .fluxo{grid-template-columns:1fr 1fr 1fr}
-    .video-grid{grid-template-columns:1fr 380px;gap:56px}
-    .comp{grid-template-columns:1fr 1fr 1fr;align-items:stretch}
-    .pilares{grid-template-columns:1fr 1fr}
-    .passos{grid-template-columns:1fr 1fr 1fr}
-    .duas{grid-template-columns:1fr 1fr}
-    .frentes{grid-template-columns:repeat(6,1fr);gap:8px}
-    .frente{grid-template-columns:1fr;justify-items:center;align-items:start;align-content:start;gap:10px;text-align:center;padding:0}
-    .frente::before{left:0;right:0;top:22px;bottom:auto;border-left:0;border-top:3px dotted var(--mist)}
-    .frente:first-child::before{left:50%;top:22px}
-    .frente:last-child::before{right:50%;bottom:auto}
+    .areas{grid-template-columns:repeat(5,1fr)}
+    .video-grid{grid-template-columns:1fr 340px;gap:56px}
   }
-  @media (min-width:1000px){ .pilares{grid-template-columns:repeat(4,1fr)} }
   @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 <script defer src="/_vercel/insights/script.js"></script>
@@ -229,20 +163,29 @@
       <a class="marca" href="#" aria-label="Tria, início"><b>T</b>ria</a>
       <div class="top-links">
         <a class="top-cta" href="/blog/">Blog</a>
-        <a class="top-cta" href="https://wa.me/5588998659065?text=Ol%C3%A1%2C%20Pedro%21%20Vim%20pela%20p%C3%A1gina%20do%20Tria%20e%20quero%20testar." target="_blank" rel="noopener">Quero testar</a>
+        <a class="top-cta" data-convite="a" href="https://wa.me/5588998659065?text=Ol%C3%A1%2C%20Pedro%21%20Vi%20a%20p%C3%A1gina%20do%20Tria%20e%20quero%20contar%20como%20%C3%A9%20a%20confer%C3%AAncia%20das%20contas%20aqui." target="_blank" rel="noopener">Fale comigo</a>
       </div>
     </nav>
     <div class="hero-body">
-      <h1><span class="tq">Confira antes.</span><br>Receba pelo que fez.</h1>
-      <p class="hero-sub">Fotografe os documentos do atendimento com o celular, e o Tria mostra onde eles não batem entre si, antes de o plano de saúde conferir. Assim a sua instituição recebe pelo cuidado que já prestou.</p>
-      <div class="ctas">
-        <a class="btn btn-main" href="https://wa.me/5588998659065?text=Ol%C3%A1%2C%20Pedro%21%20Vim%20pela%20p%C3%A1gina%20do%20Tria%20e%20quero%20testar." target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8.5 8.5 0 0 1-12.6 7.4L3 21l1.6-5.2A8.5 8.5 0 1 1 21 12z"/></svg>
-          Quero testar de graça
-        </a>
-        <a class="btn btn-ghost" href="#solucao">Ver como funciona</a>
+      <div>
+        <h1><span class="tq">Confira antes.</span><br>Receba pelo que fez.</h1>
+        <p class="hero-sub">Envie os documentos do atendimento como eles já existem, e o Tria mostra onde eles não batem entre si, antes de o plano de saúde conferir. Assim a sua instituição recebe pelo cuidado que já prestou.</p>
+        <div class="ctas">
+          <a class="btn btn-main" data-convite="a" href="https://wa.me/5588998659065?text=Ol%C3%A1%2C%20Pedro%21%20Vi%20a%20p%C3%A1gina%20do%20Tria%20e%20quero%20contar%20como%20%C3%A9%20a%20confer%C3%AAncia%20das%20contas%20aqui." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8.5 8.5 0 0 1-12.6 7.4L3 21l1.6-5.2A8.5 8.5 0 1 1 21 12z"/></svg>
+            Me conta como é aí
+          </a>
+          <a class="btn btn-ghost" data-convite="b" href="https://wa.me/5588998659065?text=Ol%C3%A1%2C%20Pedro%21%20Vi%20a%20p%C3%A1gina%20do%20Tria%20e%20quero%20testar%20na%20minha%20institui%C3%A7%C3%A3o." target="_blank" rel="noopener">Quero testar de graça</a>
+        </div>
+        <p class="hero-note">Gratuito para começar · Sem integração · Só um link</p>
       </div>
-      <p class="hero-note">Gratuito para começar · Sem integração · Só um link</p>
+      <div class="video-box">
+        <!-- Trocar por assets/tria-ideia.mp4 (vídeo da ideia) quando sair; aí a seção #exemplo volta a aparecer. -->
+        <video controls playsinline preload="metadata" poster="assets/video-capa.jpg"
+               aria-label="Demonstração do Tria: documentos do atendimento conferidos uns contra os outros, com o relatório de achados">
+          <source src="assets/tria-demo.mp4" type="video/mp4">
+        </video>
+      </div>
     </div>
   </div>
 </header>
@@ -252,233 +195,97 @@
 <section id="problema">
   <div class="wrap">
     <p class="eyebrow">O problema</p>
-    <h2>Hospitais e clínicas perdem receita por documentos que não batem</h2>
-    <p class="lead">Glosa é quando o plano de saúde nega ou retém o pagamento de uma conta. Algumas glosas não questionam o cuidado, e sim o registro: o que foi prescrito, o que foi feito e o que foi anotado precisam contar a mesma história. Quando não contam, a conta volta.</p>
+    <h2>Hospitais e clínicas atendem e depois esperam para receber</h2>
+    <p class="lead">Glosa é quando o plano de saúde nega ou segura o pagamento de uma conta. Muitas vezes a glosa não questiona o cuidado, e sim o registro: o que foi prescrito, o que foi feito e o que foi anotado precisam contar a mesma história. Quando não contam, a conta volta, e a equipe refaz o trabalho para provar o que já fez.</p>
     <div class="stats">
       <div class="stat">
         <b>15,93%</b>
-        <p>do faturamento foi glosado, em média, na primeira análise dos planos de saúde em 2025, nos hospitais associados à Anahp. Depois da negociação, só 1,72% se sustenta.</p>
+        <p>do faturamento foi glosado na primeira análise dos planos de saúde, em média, nos hospitais associados à Anahp em 2025. A maior parte se recupera depois (só 1,72% fica glosado), mas recuperar custa trabalho da equipe e tempo de caixa.</p>
       </div>
       <div class="stat">
-        <b>29 dias</b>
-        <p>a mais para receber das operadoras (77 dias) do que para pagar os fornecedores (48 dias), em média, nos hospitais da Anahp em 2025.</p>
-      </div>
-      <div class="stat">
-        <b>2,4%</b>
-        <p>das anotações de enfermagem estavam completas, embora presentes em 99,5% dos prontuários, em 424 prontuários de um hospital universitário (dados de 2006–07).</p>
+        <b>77 dias</b>
+        <p>é o prazo médio para receber das operadoras, nos mesmos hospitais, em 2025. Para pagar os fornecedores, o prazo médio é de 48 dias.</p>
       </div>
     </div>
-    <p class="fonte">Fontes: <a href="https://anahp.com.br/wp-content/uploads/2026/04/Balanco-Observatorio-9.pdf" target="_blank" rel="noopener">Balanço Observatório Anahp, 9ª edição, março de 2026</a> · <a href="https://scielo.br/j/ape/a/BsjcfBf4mRWgD7ZRYGfBJ4F/?lang=en" target="_blank" rel="noopener">Setz e D'Innocenzo, Acta Paulista de Enfermagem, 2009</a>.</p>
-    <p class="destaque">Hoje, conferir esses documentos é manual e não dá conta de tudo. A auditoria enxerga as glosas grandes; os erros pequenos passam, e o plano de saúde os encontra depois.</p>
-    <a class="mais" href="https://github.com/pedr0-gomes/tria-auditoria/blob/main/docs/problema.md" target="_blank" rel="noopener">Entenda o problema em detalhe →</a>
+    <p class="fonte">Fonte: <a href="https://anahp.com.br/wp-content/uploads/2026/04/Balanco-Observatorio-9.pdf" target="_blank" rel="noopener">Balanço Observatório Anahp, 9ª edição, março de 2026</a>.</p>
+    <p class="destaque">Conferir tudo à mão não dá conta. A auditoria olha o que dá tempo de olhar; o resto, o plano de saúde encontra depois.</p>
+    <a class="mais" href="/blog/">O que a pesquisa mostra sobre glosa →</a>
   </div>
 </section>
 
-<section id="solucao" class="faixa">
+<section id="como-funciona" class="faixa">
   <div class="wrap">
-    <p class="eyebrow">A solução</p>
-    <h2>Dados soltos, conferência precisa, valor protegido</h2>
+    <p class="eyebrow">Como funciona</p>
+    <h2>Um documento contra o outro, antes de o plano conferir</h2>
     <p class="lead">O Tria não pede que a instituição mude a forma como trabalha. Ele parte dos documentos como eles já existem e devolve o que importa para quem audita e para quem decide.</p>
     <ol class="fluxo">
       <li class="etapa">
         <span class="num">1</span>
-        <p class="rot">Dados soltos</p>
-        <p>Prontuário, conta, guia, laudo: em foto, PDF, planilha ou papel escaneado. O Tria recebe o documento no formato em que ele está, sem integração com sistema nenhum.</p>
+        <p class="rot">Envia</p>
+        <p>Prescrição, anotação, evolução, conta, guia, laudo: do jeito que já existem. Pelo celular, sem integração com sistema nenhum.</p>
         <div class="chips" aria-label="Formatos"><span>Foto</span><span>PDF</span><span>Planilha</span><span>Word</span><span>Scan</span><span>e mais…</span></div>
-        <p class="nota">Hoje o app lê por foto. Os outros formatos entram conforme a necessidade de cada instituição.</p>
       </li>
       <li class="etapa">
         <span class="num">2</span>
-        <p class="rot">Conferência precisa</p>
-        <p>A inteligência artificial lê o que está escrito, linha por linha. Regras fixas cruzam os documentos entre si e apontam onde a história não fecha. O que estiver ilegível vira um aviso para conferir no papel, nunca um chute.</p>
+        <p class="rot">Confere</p>
+        <p>A inteligência artificial lê o que está escrito, linha por linha. Regras fixas cruzam um documento com o outro e apontam onde a história não fecha. O que estiver ilegível vira um aviso para conferir no papel, nunca um chute.</p>
       </li>
       <li class="etapa escuro">
         <span class="num">3</span>
-        <p class="rot">Valor protegido</p>
+        <p class="rot">Aponta</p>
         <ul class="saidas">
           <li>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h4"/></svg>
-            <div><b>Relatório <span class="selo ar">no ar</span></b><small>Onde olhar, com a razão de cada achado.</small></div>
+            <div><b>Onde olhar</b><small>Cada achado com a razão. Quem decide é a sua equipe.</small></div>
           </li>
           <li>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 20v-6M12 20V9M19 20V4"/></svg>
-            <div><b>Painel de gestão <span class="selo breve">em construção</span></b><small>Os achados por tipo e por setor, ao longo do tempo.</small></div>
+            <div><b>Por setor, ao longo do tempo</b><small>Os achados por tipo, para corrigir a origem.</small></div>
           </li>
           <li>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M14.5 9.5c-.5-1-1.5-1.5-2.5-1.5-1.4 0-2.5.8-2.5 2s1.1 1.7 2.5 2 2.5.8 2.5 2-1.1 2-2.5 2c-1 0-2-.5-2.5-1.5M12 6.5V8M12 16v1.5"/></svg>
-            <div><b>Receita em risco <span class="selo breve">em construção</span></b><small>O que está exposto antes de a conta sair.</small></div>
+            <div><b>O que está exposto</b><small>Antes de a conta sair.</small></div>
           </li>
         </ul>
       </li>
     </ol>
-    <p class="fluxo-fim">Tudo antes de o plano de saúde conferir.</p>
+    <p class="areas-tit">O que o Tria confere</p>
+    <ul class="areas">
+      <li><span class="area">Medicamentos<small>prescrito, dado e anotado</small></span></li>
+      <li><span class="area">Materiais<small>usado e cobrado</small></span></li>
+      <li><span class="area">Exames e laudos<small>pedido, feito e laudado</small></span></li>
+      <li><span class="area">Conta × prontuário<small>cobrado e registrado</small></span></li>
+      <li><a class="area" data-convite="a" href="https://wa.me/5588998659065?text=Ol%C3%A1%2C%20Pedro%21%20Vi%20a%20p%C3%A1gina%20do%20Tria%20e%20quero%20contar%20como%20%C3%A9%20a%20confer%C3%AAncia%20das%20contas%20aqui." target="_blank" rel="noopener">A sua prioridade<small>me conta o que pesa aí →</small></a></li>
+    </ul>
   </div>
 </section>
 
-<section id="video">
+<section id="exemplo" hidden>
+  <!-- Volta a aparecer quando o vídeo da ideia estiver no hero: aqui fica o exemplo de medicação. -->
   <div class="wrap video-grid">
     <div>
-      <p class="eyebrow">Na prática</p>
-      <h2>Da foto ao relatório, em menos de um minuto</h2>
-      <p class="lead">O vídeo mostra a primeira frente que o Tria confere: a administração de medicamentos, cruzando prescrição, anotação e evolução. As telas e o relatório são do app real, com documentos fictícios.</p>
+      <p class="eyebrow">Um exemplo</p>
+      <h2>Administração de medicamentos, da foto ao relatório</h2>
+      <p class="lead">Prescrição, anotação e evolução conferidas umas contra as outras. O relatório aponta onde olhar, com a razão de cada achado.</p>
     </div>
     <div class="video-box">
-      <video controls playsinline preload="metadata" poster="assets/video-capa.jpg"
-             aria-label="Demonstração do Tria: fotos da prescrição, da anotação e da evolução, leitura e relatório de achados">
+      <video controls playsinline preload="none" poster="assets/video-capa.jpg"
+             aria-label="Exemplo do Tria: prescrição, anotação e evolução conferidas, com o relatório de achados">
         <source src="assets/tria-demo.mp4" type="video/mp4">
       </video>
     </div>
   </div>
 </section>
 
-<section id="onde-entra" class="faixa">
+<section id="confianca">
   <div class="wrap">
-    <p class="eyebrow">Onde o Tria entra</p>
-    <h2>Para quem não tem sistema, a alternativa hoje é o trabalho manual</h2>
-    <p class="lead">Há boas plataformas de auditoria no mercado, e elas pressupõem uma instituição com sistema instalado. Quem trabalha com documento solto fica com a conferência manual. É esse espaço que o Tria ocupa.</p>
-    <div class="comp">
-      <div class="col">
-        <h3>Plataformas integradas</h3>
-        <p class="quem">Ferramentas que se conectam ao sistema da instituição</p>
-        <dl>
-          <div><dt>Para começar</dt><dd>Integração com o sistema</dd></div>
-          <div><dt>O que cobre</dt><dd>O que está no sistema</dd></div>
-          <div><dt>Custo inicial</dt><dd>Implantação</dd></div>
-        </dl>
-      </div>
-      <div class="col">
-        <h3>Conferência manual</h3>
-        <p class="quem">Como a maioria faz hoje</p>
-        <dl>
-          <div><dt>Para começar</dt><dd>Tempo da equipe</dd></div>
-          <div><dt>O que cobre</dt><dd>O que dá tempo de ver</dd></div>
-          <div><dt>Custo inicial</dt><dd>Horas da equipe</dd></div>
-        </dl>
-      </div>
-      <div class="col tria">
-        <h3>Tria</h3>
-        <p class="quem">Documentos soltos, sem sistema</p>
-        <dl>
-          <div><dt>Para começar</dt><dd>Só um link</dd></div>
-          <div><dt>O que cobre</dt><dd>Qualquer documento enviado</dd></div>
-          <div><dt>Custo inicial</dt><dd>Gratuito</dd></div>
-        </dl>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="proposta" class="escura">
-  <div class="wrap">
-    <p class="eyebrow">Proposta de valor</p>
-    <h2>Sua instituição recebendo pelo que fez. <span class="tq">Com segurança e precisão.</span></h2>
-    <div class="pilares">
-      <div class="pilar">
-        <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><circle cx="20" cy="20" r="16"/><circle cx="20" cy="20" r="9"/><circle cx="20" cy="20" r="2.5" fill="currentColor"/></svg>
-        <h3>Precisão</h3>
-        <p>A IA só lê; regras fixas decidem. Cada achado traz a razão, e a decisão final é sempre do auditor.</p>
-      </div>
-      <div class="pilar">
-        <svg viewBox="0 0 40 40" fill="currentColor" aria-hidden="true"><rect x="4" y="4" width="9" height="9" rx="2"/><rect x="15.5" y="4" width="9" height="9" rx="2"/><rect x="27" y="4" width="9" height="9" rx="2"/><rect x="4" y="15.5" width="9" height="9" rx="2"/><rect x="15.5" y="15.5" width="9" height="9" rx="2"/><rect x="27" y="15.5" width="9" height="9" rx="2"/><rect x="4" y="27" width="9" height="9" rx="2"/><rect x="15.5" y="27" width="9" height="9" rx="2"/><rect x="27" y="27" width="9" height="9" rx="2"/></svg>
-        <h3>Qualquer documento</h3>
-        <p>Aceita o documento como ele já existe: foto, PDF, planilha ou papel escaneado. Hoje o app lê por foto e confere medicamentos; as demais frentes entram conforme a necessidade.</p>
-      </div>
-      <div class="pilar">
-        <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M14 6v8M26 6v8M10 14h20v6a10 10 0 0 1-20 0zM20 30v5"/><path d="M6 34L34 6"/></svg>
-        <h3>Sem integração</h3>
-        <p>Funciona com o que a instituição já tem. Não depende de prontuário eletrônico nem de equipe de TI.</p>
-      </div>
-      <div class="pilar">
-        <svg viewBox="0 0 40 40" fill="currentColor" aria-hidden="true"><rect x="6" y="22" width="7" height="12" rx="2"/><rect x="16.5" y="14" width="7" height="20" rx="2"/><rect x="27" y="6" width="7" height="28" rx="2"/></svg>
-        <h3>Resultado medido</h3>
-        <p>A sua auditoria confirma cada achado. O valor do Tria é medido na sua instituição, não prometido.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="como-comecar">
-  <div class="wrap">
-    <p class="eyebrow">Como começar</p>
-    <h2>Você testa de graça, vê o resultado e decide</h2>
-    <ol class="passos">
-      <li class="passo">
-        <span class="num">1</span>
-        <p class="rot">Testa</p>
-        <p>Gratuito por 30 dias, com limite de uso. Você recebe um link e começa com documentos da sua instituição, sem identificação do paciente.</p>
-      </li>
-      <li class="passo">
-        <span class="num">2</span>
-        <p class="rot">Mede</p>
-        <p>A sua auditoria confere e confirma os achados. Você vê, na sua própria instituição, o que o Tria encontra.</p>
-      </li>
-      <li class="passo escuro">
-        <span class="num">3</span>
-        <p class="rot">Assina</p>
-        <p>Se o resultado valer, a assinatura é por instituição, em faixas de porte. Sem prazo fixo para decidir.</p>
-      </li>
-    </ol>
-  </div>
-</section>
-
-<section id="estagio" class="faixa">
-  <div class="wrap">
-    <p class="eyebrow">Onde estamos</p>
-    <h2>Pronto para testar, buscando as primeiras instituições</h2>
-    <div class="duas uma">
-      <div class="bloco">
-        <h3>Hoje</h3>
-        <ul>
-          <li>App no ar, acessado por link</li>
-          <li>Lê os documentos por foto</li>
-          <li>Pronto para testar na sua instituição</li>
-          <li>Testado até agora em casos sintéticos</li>
-        </ul>
-      </div>
-    </div>
-    <p class="frentes-tit">O que o Tria vai conferir</p>
-    <ol class="frentes">
-      <li class="frente ar">
-        <span class="marco"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
-        <div><b>Administração de medicamentos</b><span>no ar</span></div>
-      </li>
-      <li class="frente prox">
-        <span class="marco" aria-hidden="true"></span>
-        <div><b>Materiais cirúrgicos</b><span>próxima</span></div>
-      </li>
-      <li class="frente depois">
-        <span class="marco" aria-hidden="true"></span>
-        <div><b>Exames e laudos</b><span>depois</span></div>
-      </li>
-      <li class="frente depois">
-        <span class="marco" aria-hidden="true"></span>
-        <div><b>Conta × prontuário</b><span>depois</span></div>
-      </li>
-      <li class="frente depois">
-        <span class="marco" aria-hidden="true"></span>
-        <div><b>Painel de gestão</b><span>depois</span></div>
-      </li>
-      <li class="frente voce">
-        <span class="marco"><svg viewBox="0 0 24 24" fill="none" stroke="#12263A" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span>
-        <div><b>A sua prioridade</b><span>o que a sua instituição precisar</span></div>
-      </li>
-    </ol>
-  </div>
-</section>
-
-<section id="privacidade">
-  <div class="wrap">
-    <p class="eyebrow">Privacidade e limites</p>
-    <h2>O que o Tria faz com os documentos</h2>
+    <p class="eyebrow">Confiança e privacidade</p>
+    <h2>A IA lê, as regras conferem, a sua equipe decide</h2>
     <div class="caixa">
       <ul class="lista">
         <li>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
-          <p><b>Não guarda os documentos.</b> A imagem é enviada a um provedor de inteligência artificial só para a leitura.</p>
-        </li>
-        <li>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
-          <p><b>Documento sem identificação do paciente.</b> Antes da foto, cubra nome, leito e número do prontuário.</p>
+          <p><b>Cada achado vem com a razão.</b> Você vê o que não bateu e entre quais documentos.</p>
         </li>
         <li>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
@@ -486,14 +293,22 @@
         </li>
         <li>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
-          <p><b>A decisão é do auditor.</b> O Tria aponta onde olhar. Corrigir, deixar de cobrar ou declarar continua sendo decisão de quem audita.</p>
+          <p><b>A decisão é de quem audita.</b> O Tria aponta onde olhar. Corrigir, deixar de cobrar ou declarar continua sendo decisão da sua equipe.</p>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+          <p><b>Não guarda os documentos.</b> A imagem é enviada a um provedor de inteligência artificial só para a leitura.</p>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+          <p><b>Documento sem identificação do paciente.</b> Antes de enviar, cubra nome, leito e número do prontuário.</p>
         </li>
       </ul>
     </div>
   </div>
 </section>
 
-<section id="blog">
+<section id="blog" class="faixa">
   <div class="wrap">
     <p class="eyebrow">Blog</p>
     <h2>O que a pesquisa mostra sobre glosa e conferência</h2>
@@ -518,13 +333,17 @@
 
 <section id="contato" class="contato">
   <div class="wrap">
-    <p class="eyebrow">Teste o Tria</p>
-    <h2>Vamos testar na <span class="tq">sua instituição?</span></h2>
-    <p class="lead">Gratuito. Sem integração. Só um link. Se você trabalha com auditoria, faturamento ou gestão em hospital ou clínica que atende planos de saúde, me chame no WhatsApp e eu envio o seu link de acesso.</p>
-    <a class="btn btn-main" href="https://wa.me/5588998659065?text=Ol%C3%A1%2C%20Pedro%21%20Vim%20pela%20p%C3%A1gina%20do%20Tria%20e%20quero%20testar." target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8.5 8.5 0 0 1-12.6 7.4L3 21l1.6-5.2A8.5 8.5 0 1 1 21 12z"/></svg>
-      Falar comigo no WhatsApp
-    </a>
+    <p class="eyebrow">Fale comigo</p>
+    <h2>Isso acontece na <span class="tq">sua instituição?</span></h2>
+    <p class="lead">Se você trabalha com auditoria, faturamento ou gestão em hospital ou clínica que atende planos de saúde, me conte como é a conferência das contas aí. Se quiser, você testa de graça, vê o achado e decide.</p>
+    <div class="ctas">
+      <a class="btn btn-main" data-convite="a" href="https://wa.me/5588998659065?text=Ol%C3%A1%2C%20Pedro%21%20Vi%20a%20p%C3%A1gina%20do%20Tria%20e%20quero%20contar%20como%20%C3%A9%20a%20confer%C3%AAncia%20das%20contas%20aqui." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8.5 8.5 0 0 1-12.6 7.4L3 21l1.6-5.2A8.5 8.5 0 1 1 21 12z"/></svg>
+        Me conta como é aí
+      </a>
+      <a class="btn btn-ghost" data-convite="b" href="https://wa.me/5588998659065?text=Ol%C3%A1%2C%20Pedro%21%20Vi%20a%20p%C3%A1gina%20do%20Tria%20e%20quero%20testar%20na%20minha%20institui%C3%A7%C3%A3o." target="_blank" rel="noopener">Quero testar de graça</a>
+    </div>
+    <p class="comunidade">Conferir antes protege o caixa de quem mantém o atendimento aberto. E o registro que conta a história certa também protege o paciente.</p>
     <p class="assina">Pedro Gomes Sampaio, fundador do Tria</p>
   </div>
 </section>
@@ -541,6 +360,25 @@
     </nav>
   </div>
 </footer>
+
+<script>
+  // Dois convites medidos: cada um tem o seu texto no WhatsApp; a origem (?ref=li, blog, qr, dd) vai junto.
+  (function(){
+    var TEXTOS = {
+      a: "Olá, Pedro! Vi a página do Tria e quero contar como é a conferência das contas aqui.",
+      b: "Olá, Pedro! Vi a página do Tria e quero testar na minha instituição."
+    };
+    var ref = "";
+    try { ref = (new URLSearchParams(location.search).get("ref") || "").toLowerCase(); } catch(e) {}
+    if (!/^[a-z0-9-]{1,20}$/.test(ref)) ref = "";
+    var links = document.querySelectorAll("a[data-convite]");
+    for (var i = 0; i < links.length; i++) {
+      var t = TEXTOS[links[i].getAttribute("data-convite")];
+      if (!t) continue;
+      links[i].href = "https://wa.me/5588998659065?text=" + encodeURIComponent(t + (ref ? " (ref: " + ref + ")" : ""));
+    }
+  })();
+</script>
 
 </body>
 </html>
