@@ -107,15 +107,15 @@
   a.area{background:var(--turq);border-color:var(--turq);color:var(--navy)}
   a.area small{color:var(--navy)}
   a.area:hover{background:#4CC4BF}
+  a.area.area-ex{background:var(--white);border-color:var(--teal);color:var(--ink)}
+  a.area.area-ex small{color:var(--teal);font-weight:700}
+  a.area.area-ex:hover{background:var(--soft)}
 
   /* cartão de termo: explica a palavra técnica em linguagem comum */
   .termo{max-width:52ch;margin-top:24px;background:var(--white);border:1px solid var(--line);border-left:4px solid var(--turq);border-radius:12px;padding:16px 20px}
   .termo .q{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal)}
   .termo p:last-child{font-size:16px;color:var(--muted);margin-top:4px}
   .stat small{display:block;font-size:14px;color:var(--muted-2);margin-top:10px}
-
-  /* exemplo */
-  .video-grid{display:grid;gap:28px;align-items:center}
 
   /* segurança */
   .garantias{list-style:none;padding:0;margin-top:32px;display:grid;gap:16px}
@@ -154,7 +154,6 @@
     .fluxo{grid-template-columns:1fr 1fr 1fr}
     .areas{grid-template-columns:repeat(5,1fr)}
     .garantias{grid-template-columns:1fr 1fr}
-    .video-grid{grid-template-columns:1fr 340px;gap:56px}
   }
   @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
@@ -186,7 +185,7 @@
         <p class="hero-note">Gratuito para começar · Sem integração · Só um link</p>
       </div>
       <div class="video-box">
-        <!-- Trocar por assets/tria-ideia.mp4 (vídeo da ideia) quando sair; aí a seção #exemplo volta a aparecer. -->
+        <!-- Trocar por assets/tria-ideia.mp4 (vídeo da ideia) quando sair; o de medicamentos fica em /exemplos/medicamentos/. -->
         <video controls playsinline preload="metadata" poster="assets/video-capa.jpg"
                aria-label="Demonstração do Tria: documentos do atendimento conferidos, com o relatório do que não bate">
           <source src="assets/tria-demo.mp4" type="video/mp4">
@@ -248,29 +247,12 @@
     </ol>
     <p class="areas-tit">O que o Tria confere</p>
     <ul class="areas">
-      <li><span class="area">Medicamentos<small>prescrito, aplicado e registrado</small></span></li>
+      <li><a class="area area-ex" href="/exemplos/medicamentos/">Medicamentos<small>Ver exemplo →</small></a></li>
       <li><span class="area">Materiais<small>usado e cobrado</small></span></li>
       <li><span class="area">Exames<small>pedido, feito e laudado</small></span></li>
       <li><span class="area">Conta e prontuário<small>cobrado e registrado</small></span></li>
       <li><a class="area" data-convite="a" href="https://wa.me/5588998659065?text=Ol%C3%A1%2C%20Pedro%21%20Vi%20a%20p%C3%A1gina%20do%20Tria%20e%20gostaria%20de%20conversar%20sobre%20a%20confer%C3%AAncia%20das%20contas%20na%20minha%20institui%C3%A7%C3%A3o." target="_blank" rel="noopener">A prioridade da sua instituição<small>Diga qual →</small></a></li>
     </ul>
-  </div>
-</section>
-
-<section id="exemplo" hidden>
-  <!-- Volta a aparecer quando o vídeo da ideia estiver no hero: aqui fica o exemplo de medicação. -->
-  <div class="wrap video-grid">
-    <div>
-      <p class="eyebrow">Um exemplo</p>
-      <h2>Medicamentos: do documento ao relatório</h2>
-      <p class="lead">O que foi prescrito, aplicado e registrado, conferido em menos de um minuto.</p>
-    </div>
-    <div class="video-box">
-      <video controls playsinline preload="none" poster="assets/video-capa.jpg"
-             aria-label="Exemplo do Tria: medicamentos prescritos, aplicados e registrados, com o relatório do que não bate">
-        <source src="assets/tria-demo.mp4" type="video/mp4">
-      </video>
-    </div>
   </div>
 </section>
 
