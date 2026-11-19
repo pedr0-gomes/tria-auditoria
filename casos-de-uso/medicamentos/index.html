@@ -11,8 +11,8 @@
 <link rel="stylesheet" href="/blog/blog.css">
 <script defer src="/_vercel/insights/script.js"></script>
 <title>Medicamentos: do documento ao relatório — Tria</title>
-<meta name="description" content="Exemplo do Tria em medicamentos: o que foi prescrito, aplicado e registrado, conferido antes de o plano de saúde conferir.">
-<link rel="canonical" href="https://tria-auditoria.vercel.app/exemplos/medicamentos/">
+<meta name="description" content="Caso de uso do Tria em medicamentos: o que foi prescrito, aplicado e registrado, conferido antes de o plano de saúde conferir.">
+<link rel="canonical" href="https://tria-auditoria.vercel.app/casos-de-uso/medicamentos/">
 <meta property="og:type" content="video.other">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:title" content="Medicamentos: do documento ao relatório">
@@ -48,13 +48,13 @@
 </div></header>
 <main><div class="wrap">
 <article>
-  <p class="eyebrow">Exemplo · Medicamentos</p>
+  <p class="eyebrow">Caso de uso · Medicamentos</p>
   <h1>Medicamentos: do documento ao relatório</h1>
   <p class="sub">O Tria confere o que foi prescrito, o que foi aplicado e o que foi registrado, e aponta o que não confere.</p>
 
   <div class="video-box">
     <video controls playsinline preload="metadata" poster="/assets/video-capa.jpg"
-           aria-label="Exemplo do Tria em medicamentos: fotos da prescrição, da anotação e da evolução, conferência e relatório">
+           aria-label="Caso de uso do Tria em medicamentos: fotos da prescrição, da anotação e da evolução, conferência e relatório">
       <source src="/assets/tria-demo.mp4" type="video/mp4">
     </video>
   </div>
@@ -85,7 +85,7 @@
   <nav aria-label="Links"><a href="https://www.linkedin.com/in/pedro-gomes-sampaio-42539a409" target="_blank" rel="noopener">Pedro Gomes, fundador do Tria</a></nav>
 </div></footer>
 <script>
-  // Mesmos dois convites da landing; a origem leva "exemplo" e, se houver, o ?ref= da URL.
+  // Mesmos dois convites da landing; a origem leva "caso de uso" e, se houver, o ?ref= da URL.
   (function(){
     var TEXTOS = {
       a: "Olá, Pedro! Vi a página do Tria e gostaria de conversar sobre a conferência das contas na minha instituição.",
@@ -94,7 +94,7 @@
     var ref = "";
     try { ref = (new URLSearchParams(location.search).get("ref") || "").toLowerCase(); } catch(e) {}
     if (!/^[a-z0-9-]{1,20}$/.test(ref)) ref = "";
-    var origem = "exemplo" + (ref ? ", " + ref : "");
+    var origem = "caso de uso" + (ref ? ", " + ref : "");
     var links = document.querySelectorAll("a[data-convite]");
     for (var i = 0; i < links.length; i++) {
       var t = TEXTOS[links[i].getAttribute("data-convite")];
